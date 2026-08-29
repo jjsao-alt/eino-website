@@ -1,0 +1,625 @@
+:root {
+
+    /* 
+       Pastel Palette
+    */
+
+    --grey: #eae4e9;
+    --linen: #fff1e6;
+    --soft_blush: #fde2e4;
+    --petal_frost: #fad2e1;
+    --azure_mist: #e2ece9;
+    --light_blue: #bee1e6;
+    --parchment: #f0efeb;
+    --lavender: #dfe7fd;
+    --periwinkle: #cddafd;
+    --pyramid : #f4deda;
+    --white : white;
+    --yellow : #faedcb;
+    --purple : #dbcdf0;
+
+    /* 
+       Semantic Colors
+     */
+
+    --color-bg: var(--parchment);
+    --color-surface: #fffdfb;
+    --color-surface-soft: var(--linen);
+
+    --color-primary: var(--periwinkle);
+    --color-primary-soft: var(--lavender);
+
+    --color-secondary: var(--light_blue);
+    --color-secondary-soft: var(--azure_mist);
+
+    --color-accent: var(--petal_frost);
+    --color-accent-soft: var(--soft_blush);
+
+    --color-border: var(--grey);
+
+    --color-text: #403b42;
+    --color-text-soft: #746d76;
+    --color-text-muted: #9a939b;
+
+    /* 
+       Shape
+     */
+
+    --radius-xs: 8px;
+    --radius-sm: 12px;
+    --radius-md: 18px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --radius-pill: 999px;
+
+    /*
+       Shadows
+   */
+
+    --shadow-soft:
+        0 4px 14px rgba(104, 91, 105, 0.06);
+
+    --shadow-card:
+        0 8px 28px rgba(104, 91, 105, 0.08);
+
+    --shadow-hover:
+        0 12px 32px rgba(104, 91, 105, 0.12);
+
+    /*
+       Spacing
+    */
+
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-10: 40px;
+
+    /*
+       Transitions
+    */
+
+    --ease-soft: cubic-bezier(.22, 1, .36, 1);
+    
+}
+
+
+/* =================================
+   Base
+   ================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: var(--color-text);
+    background:
+        radial-gradient(
+            circle at 10% 0%,
+            var(--soft_blush) 0,
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 100% 10%,
+            var(--lavender) 0,
+            transparent 30%
+        ),
+        var(--color-bg);
+
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    line-height: 1.6;
+}
+
+
+/* =================================
+   Typography
+   ================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    color: var(--color-text);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    font-weight: 750;
+}
+
+h1 {
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+p {
+    color: var(--color-text-soft);
+}
+
+strong {
+    color: var(--color-text);
+}
+
+
+/* =================================
+   Links
+   ================================= */
+
+a {
+    color: #626fb0;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+        color 180ms ease,
+        opacity 180ms ease;
+}
+
+a:hover {
+    color: #4f5d9f;
+}
+
+
+/* =================================
+   Buttons
+   ================================= */
+
+button,
+.btn {
+    appearance: none;
+    border: 1px solid transparent;
+    border-radius: var(--radius-pill);
+
+    padding: 11px 20px;
+
+    font: inherit;
+    font-weight: 700;
+    color: var(--color-text);
+
+    background: var(--periwinkle);
+
+    cursor: pointer;
+
+    box-shadow: var(--shadow-soft);
+
+    transition:
+        transform 180ms var(--ease-soft),
+        box-shadow 180ms var(--ease-soft),
+        background 180ms ease;
+}
+
+button:hover,
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+button:active,
+.btn:active {
+    transform: translateY(0) scale(.97);
+}
+
+button:focus-visible,
+.btn:focus-visible {
+    outline: 3px solid var(--petal_frost);
+    outline-offset: 3px;
+}
+
+
+/* Primary */
+
+.btn-primary {
+    color: var(--white);
+    background: var(--periwinkle);
+}
+
+.btn-primary.yellow {
+    background: var(--yellow);
+    color: var(--color-text-muted);
+}
+
+.btn-primary.blue {
+    background: var(--periwinkle);
+}
+
+.btn-primary.green {
+    background: var(--light_blue);
+}
+
+.btn-primary.pink {
+    background: var(--petal_frost);
+}
+
+.btn-primary.lavender {
+    background: var(--light_blue);
+}
+
+.btn-primary:hover {
+    filter: brightness(0.95);
+}
+
+
+/* Secondary */
+
+.btn-secondary {
+    background: var(--light_blue);
+}
+
+.btn-secondary:hover {
+    background: var(--azure_mist);
+}
+
+
+/* Accent */
+
+.btn-accent {
+    background: var(--petal_frost);
+}
+
+.btn-accent:hover {
+    background: var(--soft_blush);
+}
+
+
+/* Soft */
+
+.btn-soft {
+    background: var(--grey);
+}
+
+
+/* =================================
+   Inputs
+   ================================= */
+
+input,
+textarea,
+select {
+    width: 100%;
+
+    padding: 12px 16px;
+
+    border: 1px solid var(--grey);
+    border-radius: var(--radius-md);
+
+    color: var(--color-text);
+    background: rgba(255, 253, 251, .85);
+
+    font: inherit;
+
+    outline: none;
+
+    transition:
+        border-color 180ms ease,
+        box-shadow 180ms ease,
+        background 180ms ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--color-text-muted);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--periwinkle);
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(205, 218, 253, .55);
+}
+
+
+/* =================================
+   Cards
+   ================================= */
+
+.card {
+    padding: var(--space-6);
+
+    border: 1px solid rgba(234, 228, 233, .9);
+
+    background: rgba(255, 253, 251, .82);
+
+    box-shadow: var(--shadow-card);
+
+    backdrop-filter: blur(8px);
+
+}
+
+/* Pastel card variants */
+
+.card-blush {
+    background: var(--soft_blush);
+}
+
+.card-petal {
+    background: var(--petal_frost);
+}
+
+.card-blue {
+    background: var(--azure_mist);
+}
+
+.card-sky {
+    background: var(--light_blue);
+}
+
+.card-lavender {
+    background: var(--lavender);
+}
+
+.card-periwinkle {
+    background: var(--periwinkle);
+}
+
+.card-linen {
+    background: var(--linen);
+}
+
+.card-white {
+    background: #F5F5F5;
+}
+
+
+/* =================================
+   Badges / Tags
+   ================================= */
+
+.badge,
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 6px 11px;
+
+    border-radius: var(--radius-pill);
+
+    font-size: .82rem;
+    font-weight: 700;
+
+    background: var(--lavender);
+}
+
+.badge-pink {
+    background: var(--petal_frost);
+}
+
+.badge-blue {
+    background: var(--periwinkle);
+}
+
+.badge-green {
+    background: var(--azure_mist);
+}
+
+.badge-yellow {
+    background: var(--linen);
+}
+
+.badge-purple {
+    background: var(--purple);
+}
+
+
+/* =================================
+   Alerts
+   ================================= */
+
+.alert {
+    padding: 14px 18px;
+
+    border-radius: var(--radius-md);
+
+    border: 1px solid var(--grey);
+
+    background: var(--parchment);
+}
+
+.alert-info {
+    background: var(--azure_mist);
+}
+
+.alert-success {
+    background: var(--light_blue);
+}
+
+.alert-warning {
+    background: var(--linen);
+}
+
+.alert-danger {
+    background: var(--soft_blush);
+}
+
+
+/* =================================
+   Navigation
+   ================================= */
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 10px;
+
+    border: 1px solid rgba(234, 228, 233, .8);
+
+    background: #99c0dd;
+
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(12px);
+
+    margin: auto;
+}
+
+nav a {
+    padding: 9px 15px;
+    border-radius: var(--radius-pill);
+
+    color: var(--white);
+    transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: var(--white);
+    background: #f9d1e0;
+}
+
+nav a.active {
+    color: var(--color-text-muted);
+    background: var(--white);
+}
+
+/* =================================
+   Tables
+   ================================= */
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+
+    overflow: hidden;
+
+    border: 1px solid var(--grey);
+    border-radius: var(--radius-lg);
+
+    background: #fffdfb;
+}
+
+th {
+    padding: 14px 16px;
+
+    text-align: left;
+
+    font-weight: 750;
+
+    background: var(--lavender);
+}
+
+td {
+    padding: 14px 16px;
+    border-top: 1px solid var(--grey);
+}
+
+tr:hover td {
+    background: var(--linen);
+}
+
+
+/* =================================
+   Checkboxes / Radios
+   ================================= */
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: 18px;
+    height: 18px;
+
+    accent-color: var(--periwinkle);
+}
+
+
+/* =================================
+   Progress
+   ================================= */
+
+progress {
+    width: 100%;
+    height: 12px;
+
+    appearance: none;
+    border: none;
+}
+
+progress::-webkit-progress-bar {
+    border-radius: var(--radius-pill);
+    background: var(--grey);
+}
+
+progress::-webkit-progress-value {
+    border-radius: var(--radius-pill);
+    background: var(--periwinkle);
+}
+
+
+/* =================================
+   Dividers
+   ================================= */
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--grey);
+    margin: var(--space-8) 0;
+}
+
+
+/* =================================
+   Selection
+   ================================= */
+
+::selection {
+    color: var(--color-text);
+    background: var(--petal_frost);
+}
+
+
+/* =================================
+   Scrollbar
+   ================================= */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--parchment);
+}
+
+::-webkit-scrollbar-thumb {
+    border: 3px solid var(--parchment);
+    border-radius: var(--radius-pill);
+    background: var(--periwinkle);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--petal_frost);
+}
+
+/* ===================================================================================================================================================================
+======================================================================================================================================================================
+====================================================================================================================================================================== */
